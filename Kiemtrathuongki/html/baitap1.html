@@ -37,7 +37,7 @@
             $("#txtMaSV").blur(kiemTraMaSV);
 
             function kiemTraHT() {
-                var mauKT = /^(A-Z){1}[a-z]+(\s[A-Z]{1}[a-z]*)+$/;
+                var mauKT = /^[A-Z]{1}[a-z]+(\s[A-Z]{1}[a-z]*)+$/;
                 var chuoiHT = $("#txtHT").val();
                 var kq = mauKT.test(chuoiHT);
                 if (kq == true) {
