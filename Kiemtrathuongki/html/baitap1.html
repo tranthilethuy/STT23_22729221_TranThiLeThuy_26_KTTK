@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/Jquery-3.7.3.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        [class*=col-] {
+            padding: 0px;
+            margin: 0px;
+        }
+        
+        nav ul li {
+            width: 150px;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $("#btnOpen").click(function(e) {
+                $("#myModal").modal();
+            });
+
+            function kiemTraMaSV() {
+                var mauKT = /^(TM-)[0-9]{9}$/;
+                var chuoiMaSV = $("#txtMaSV").val();
+                var kq = mauKT.test(chuoiMaSV);
+                if (kq == true) {
+                    alert("Nhap dung mau");
+                } else {
+                    alert("Nhap sai mau");
+                }
+            }
+            $("#txtMaSV").blur(kiemTraMaSV);
+
+            function kiemTraHT() {
+                var mauKT = /^(A-Z){1}[a-z]+(\s[A-Z]{1}[a-z]*)+$/;
+                var chuoiHT = $("#txtHT").val();
+                var kq = mauKT.test(chuoiHT);
+                if (kq == true) {
+                    alert("Nhap dung mau");
+                } else {
+                    alert("Nhap sai mau");
+                }
+            }
+            $("#txtHT").blur(kiemTraHT);
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container bg-light">
+        <div class="row">
+
+            <div class="col-3 col-md-3">
+                <img src="../img/Logo.png" alt="" width="200px">
+            </div>
+            <div class="col-9 col-md-9 align-content-around align-content-between ">
+                <h2>BEP AN TU THIEN SINH VIEN</h2>
+            </div>
+
+        </div>
+        <div class="row">
+            <nav class="navbar navbar-expand">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a href="https://iuh.edu.vn" class="nav-link">HOME</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                                SERVICE
+                            </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#" id="btnOpen">MOBIPHONE</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">VINAPHONE</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">VIETTEL</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="#" class="nav-link">CONTACT</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">ABOUT</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">HELP</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="row">
+            <table class="table table-active">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            <div class="modal fade" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">DANG KY</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="forMaSV">Ma Sinh Vien</label>
+                                    <input type="text" class="form-control" id="txtMaSV" aria-describedby="txtMaSV">
+                                    <small id="emailHelp" class="form-text text-muted">Ma sinh vien</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="forHT">Ho ten</label>
+                                    <input type="text" class="form-control" id="txtHT">
+                                </div>
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row"></div>
+    </div>
+
+</body>
+
+</html>
